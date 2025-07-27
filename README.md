@@ -27,6 +27,15 @@ Before running this project, make sure you have the following installed:
 - .NET Framework (or .NET Core depending on your project)
 - MySQL Server or any supported relational database
 
+###Credentials 
+Customer:
+testuser123@gmail.com
+test@123
+
+Admin:
+admin@gmail.com
+12345
+
 ### Clone & Run Locally
 
 ```bash
