@@ -30,5 +30,5 @@ Before running this project, make sure you have the following installed:
 ### Clone & Run Locally
 
 ```bash
-git clone https://github.com/yourusername/your-repo-name.git
+git clone  https://github.com/Nisan01/Complete-Food-Ordering-System-asp.net.git
 cd your-repo-name
