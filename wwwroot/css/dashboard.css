@@ -1,0 +1,150 @@
+.Dashboard-container{
+        position: relative;
+    display: flex
+;
+    height: 79vh;
+    width: 100%;
+    padding: 2rem 5rem;
+    gap: 1rem;
+    overflow: hidden;
+}
+
+
+.left-menuBar{
+        width: 25%;
+    background-color: white;
+}
+
+.left-menuBar ul{
+        background-color: #ffffff;
+            height: 100%;
+    display: flex
+;
+    flex-direction: column;
+    align-items: center;
+   justify-content: space-between;
+    padding: 0;
+}
+
+
+.left-menuBar ul li{
+   list-style: none;
+    /* padding: 2rem; */
+    display: flex
+;
+    width: 100%;
+    justify-content: center;
+    background-color: red;
+    height: 5rem;
+    align-items: center;
+    text-align: center;
+}
+
+.left-menuBar li a {
+    text-decoration: none;
+    color: white;
+}
+
+
+.right-OverviewData{
+        width: 75%;
+    background-color: white;
+    padding: 2rem;
+    overflow-y: scroll;
+}
+
+
+.right-OverviewData h2{
+
+text-align: center;
+margin-bottom: 1rem;
+
+}
+
+
+#admin-logout{
+        background-color: #1e2223;
+    color: #ffffff;
+ 
+    box-shadow: none;
+    border: none;
+    width: 100%;
+    height: 100%;
+}
+
+#admin-form-controller{
+       width: 100%;
+    height: 100%;
+}
+
+
+
+
+
+.box-container1{
+    display: flex
+;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+}
+
+
+
+.box-container2{
+
+    display: flex
+;
+    align-items: center;
+    justify-content: center;
+    gap: 14rem;
+
+}
+.box-container3{
+
+    display: flex
+;
+    align-items: center;
+    justify-content: center;
+    gap: 16rem;
+
+}
+.box{
+    background-color: red;
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    display: flex
+;
+    flex-direction: column;
+    align-items: center;
+        box-shadow: 0 4px 13.2px 3px rgba(0, 0, 0, 0.25);
+}
+
+.box1{
+   background-color: #FFB200;
+}
+
+.box2{
+   background-color: #0088FF;
+}
+.box3{
+        background-color: #FF0088;
+
+}
+.box4{
+  background-color: #6FFF00;
+}
+.box5{
+       background-color: #ff5b00;
+}
+
+
+
+
+.box-collection{
+    height: 100%;
+    display: flex
+;
+    flex-direction: column;
+    gap: 4rem;
+}

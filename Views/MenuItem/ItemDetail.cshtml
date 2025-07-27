@@ -1,0 +1,70 @@
+@model FoodOrderingSystem.Models.Menu
+
+@if (TempData["CartMessage"] != null)
+{
+    <div class="alert alert-success text-center">
+        @TempData["CartMessage"]
+    </div>
+}
+
+<div class="container container-itemDetail my-4 position-relative d-flex align-items-center justify-content-center">
+    <div class="menuItem-Pic d-flex justify-content-center bg-light align-items-center position-relative">
+        <img src="@Model.Image" alt="Menu Image">
+    </div>
+
+    <div class="Item-Detail d-flex flex-column align-items-left text-center">
+        <h2>@Model.Name</h2>
+        <p class="item-description">
+            @Model.Description
+        </p>
+        <div class="price-btn bg-white fw-bold">Rs @Model.Price</div>
+
+        <form id="addToCartForm" method="post">
+            <input type="hidden" name="id" value="@Model.Id" />
+            <button type="submit" class="d-flex justify-content-center align-items-center bg-dark text-white fw-bold px-2 py-2 w-100">
+                Add To Cart
+            </button>
+        </form>
+
+        <div id="cartMessage" class="text-success mt-2 fw-bold"></div>
+        <div id="cartQuantityMessage" class="text-success mt-2 fw-bold"></div>
+    </div>
+</div>
+
+<script>
+    function setupCartForm() {
+        const form = document.getElementById("addToCartForm");
+        const messageBox = document.getElementById("cartMessage");
+        const quantityBox = document.getElementById("cartQuantityMessage");
+
+        if (!form) return;
+
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const formData = new FormData(form);
+            console.log("Submitting Add to Cart for product ID:", formData.get("id")); // Debug
+
+            fetch("/Cart/AddToCart", {
+                method: "POST",
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    messageBox.textContent = data.message;
+                    quantityBox.textContent = data.quantity;
+                    messageBox.style.display = "block";
+                    quantityBox.style.display = "block";
+                } else {
+                    messageBox.textContent = "Something went wrong.";
+                }
+            })
+            .catch(error => {
+                console.error("Error:", error);
+            });
+        });
+    }
+
+    setupCartForm();
+</script>

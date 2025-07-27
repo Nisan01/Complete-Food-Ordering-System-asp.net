@@ -1,0 +1,36 @@
+@model List<FoodOrderingSystem.Models.Menu>
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Menu Items</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+           
+            <th>Price</th>
+            <th>Description</th>
+            <th>Available</th>
+            <th>Image</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+               
+                <td>Rs @item.Price</td>
+                <td>@item.Description</td>
+                <td>@(item.Available ? "Yes" : "No")</td>
+                <td>
+                    <img src="@item.Image" alt="@item.Name" style="width:80px; height:auto;" />
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

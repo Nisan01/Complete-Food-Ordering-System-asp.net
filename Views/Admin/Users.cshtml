@@ -1,0 +1,30 @@
+@model List<FoodOrderingSystem.Models.UserDetails>
+
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<h2>Registered Users</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>User Id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Registered At</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var user in Model)
+        {
+            <tr>
+                <td>@user.Id</td>
+                <td>@user.Name</td>
+                <td>@user.Email</td>
+                <td>@user.CreatedAt.ToString("g")</td>
+            </tr>
+        }
+    </tbody>
+</table>

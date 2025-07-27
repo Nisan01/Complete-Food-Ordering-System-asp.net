@@ -1,0 +1,42 @@
+@model DashboardViewModel
+
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+
+        <h2>Dashboard</h2>
+        <div class="box-collection">
+
+            <div class="box-container1">
+                <div class="box box1">
+                    <h3>Total Orders</h3>
+                    <span>@Model.TotalOrders</span>
+                </div>
+                <div class="box box2">
+                    <h3>Menu Items</h3>
+                    <span>@Model.MenuItems</span>
+                </div>
+            </div>
+
+            <div class="box-container2">
+                <div class="box box3">
+                    <h3>Users</h3>
+                    <span>@Model.RegisteredUsers</span>
+                </div>
+                <div class="box box4">
+                    <h3>Pending</h3>
+                    <span>@Model.PendingRequests</span>
+                </div>
+            </div>
+
+            <div class="box-container3">
+                <div class="box box5">
+                    <h3>Total Revenue</h3>
+                    <span>Rs @Model.TotalSellings</span>
+                </div>
+            </div>
+
+        </div>

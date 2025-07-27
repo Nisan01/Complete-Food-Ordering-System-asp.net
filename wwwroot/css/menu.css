@@ -1,0 +1,45 @@
+
+
+img{
+    height: 6rem;
+}
+
+
+.card-body h2{
+
+    font-family: Ramabhadra;
+    font-size: 1.2rem;
+    font-weight: 500;
+
+}
+
+
+.card-body p{
+
+    color: #8D8D8D;
+    font-family: Rasa;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+
+.container-price .btn{
+   
+    border-radius: 0;
+    border: 1px solid black;
+    background-color: black;
+    color: white;
+    font-size: 1.3rem;
+}
+
+.container-price i{
+    color: orange;
+}
+
+
+a{
+    text-decoration: none;
+   
+}

@@ -1,0 +1,65 @@
+@model FoodOrderingSystem.Models.CheckOut
+
+<div class="d-flex flex-column align-items-center justify-content-center position-relative">
+    <h2 class="text-center cartHeading">CheckOut</h2>
+
+    <div class="container-checkout">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <form class="checkoutform" asp-action="PlaceOrder" asp-controller="CheckOut" method="post">
+            <div class="leftdiv">
+                <h2>Billing Information</h2>
+
+                <input type="hidden" name="total_amount" value="@ViewBag.TotalAmount" />
+
+                <label>
+                    <span class="fname">Full Name <span class="required">*</span></span>
+                    <input type="text" name="fname" required />
+                </label>
+
+                <label>
+                    <span>Delivery Address <span class="required">*</span></span>
+                    <input type="text" name="delivery_address" required />
+                </label>
+
+                <label>
+                    <span>Phone <span class="required">*</span></span>
+                    <input type="tel" name="delivery_phone" required />
+                </label>
+
+                <label>
+                    <span>Email Address <span class="required">*</span></span>
+                    <input type="email" name="mail" required />
+                </label>
+            </div>
+
+            <div class="Yorder mt-3">
+                <table>
+                    <tr><th colspan="2">Your order</th></tr>
+                    <tr><td>Total Products</td><td>@ViewBag.TotalItems</td></tr>
+                    <tr><td>Total</td><td>Rs @ViewBag.TotalAmount</td></tr>
+                    <tr><td>Shipping</td><td>Free shipping</td></tr>
+                </table><br />
+                <a href="@Url.Action("Index", "CartPage")">Edit Cart</a>
+            </div>
+
+            <div class="bottom-div">
+                <label>
+                    <input id="cod-radio" type="radio" name="payment_method" value="COD"> Cash on Delivery
+                </label>
+                <button id="prd-btn" type="submit" disabled>Proceed</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const codCheckbox = document.querySelector("#cod-radio");
+    const proceedButton = document.querySelector("#prd-btn");
+
+    codCheckbox.addEventListener("change", function () {
+        proceedButton.disabled = !this.checked;
+    });
+});
+</script>

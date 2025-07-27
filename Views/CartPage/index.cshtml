@@ -1,0 +1,125 @@
+@model List<FoodOrderingSystem.Models.CartView>
+
+@{
+    decimal total=Model.Sum(item=>item.Product.Price*item.Quantity);
+}
+
+<div class="main-div position-relative">
+
+
+
+<div class="nav-btns d-flex align-items-center justify-content-between">
+<a href="@Url.Action("Index","Home")"><img src="~/Images/backIcon.svg" alt=""></a>
+<h2 class="text-center">Cart Items</h2>
+    <div class="button">
+        <a href="@Url.Action("Index","CheckOut")">CheckOut</a>
+    </div>
+</div>
+
+<div class="container-wrapper position-relative">
+
+  
+
+    <table  style="text-center">
+        <thead> 
+            <tr>
+            
+                <th>Item</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Total</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+  
+<tbody>
+
+        @if (!Model.Any())
+    {
+        <p class="text-center position-absolute top-50">Your cart is empty.</p>
+    }
+
+    else
+    {
+
+@foreach(var item in Model){
+     <tr>
+        <td>
+          <div>
+            <img src="@item.Product.Image" alt="Product Image">
+            <span class="fw-bold">@item.Product.Name</span>
+          </div>
+        </td>
+        <td>
+
+<div class="wrapper"> 
+    
+     <div class="quantity-container d-flex">
+    <span class="minus" data-product-id="@item.Product.Id">-</span>
+    <span>@item.Quantity</span>
+    <span class="plus" data-product-id="@item.Product.Id">+</span>
+</div>
+
+           
+            
+
+            </td>
+        <td>@item.Product.Price</td>
+        <td> @(item.Product.Price * item.Quantity)</td>
+<td>
+    <form method="post" asp-controller="RemoveCart" asp-action="RemoveFromCart">
+
+<input type="hidden" name="productId" value="@item.Product.Id">
+  <button type="submit" class="btn btn-sm btn-danger">Remove</button>
+    </form>
+                              
+                            </td>
+    </tr>
+}
+    
+   
+}
+
+</tbody>
+
+    </table>
+
+    
+
+</div>
+<div class="total-display">
+    <h2>Total</h2>
+    <span>Rs @total</span>
+</div>
+
+</div>
+
+
+</div> 
+
+@section Scripts {
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".plus, .minus").forEach(button => {
+        button.addEventListener("click", function () {
+            const productId = this.getAttribute("data-product-id");
+            const change = this.classList.contains("plus") ? 1 : -1;
+
+            fetch("/Cart/UpdateQuantity", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ productId: parseInt(productId), change: change })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    location.reload();
+                }
+            });
+        });
+    });
+});
+</script>
+}

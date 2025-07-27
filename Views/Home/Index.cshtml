@@ -1,0 +1,160 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@* @if (User.Identity.IsAuthenticated){
+    string userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+string userName = User.FindFirst(System.Security.Claims.ClaimTypes.Name)?.Value;
+<h2>Welcome, @userName!</h2>
+
+<form asp-action="Logout" method="post" asp-controller="Account">
+  
+
+<button type="submit" class="btn btn-primary position-relative">Logout</button>
+
+</form>
+
+
+}
+
+else 
+{
+    <form asp-action="Login" method="post" asp-controller="Account">
+  
+
+<button type="submit" class="btn btn-primary position-relative">Login</button>
+
+</form>
+} *@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="home-container container-fluid hero-section position-relative  d-flex justify-content-around">
+
+    <div class="hero-sec-left" style="width: 50%;">
+
+        <div
+            style="width: 477px; position: relative;  justify-content: flex-start; align-items: end; display: inline-flex">
+            <img style="width: 302.29px; height: 332px; left: 302px; top: 332px;"
+                src="~/images/Registericon-hori.png" />
+            <div class="d-flex  " style="">
+                <div style="    font-size: 80px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    margin-top: -169px;
+    margin-left: -5rem;
+    color: white;">Tato</div>
+                <div style="font-size: 80px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    margin-top: -5rem;
+    margin-left: -7rem;
+    color: #000000;">Tato</div>
+            </div>
+        </div>
+
+        <div class="text-container">
+            <div style="align-self: stretch;
+   
+    color: #050505;
+    font-size: 24px;
+    font-family: Arvo;
+    font-weight: 400;
+    word-wrap: break-word;">
+                Delivered with Heat. Served with Love.</div>
+            <p style="color: #484848;
+
+font-family: Buenard;
+font-size: 24px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;">From sizzling momos to spicy chowmein, we <br /> bring street-style flavor right to your door
+                <br />always fresh, always Tato Tato.</p>
+
+        </div>
+
+        <div class="btn-container d-flex flex-column align-items-end" >
+          <button class="btn custom-btn px-4 py-2">
+            
+<a href="@Url.Action("index", "Menu")" >
+            Order Now </a></button>
+
+        </div>
+
+    </div>
+
+    <div class="hero-sec-right" style="width: 17%; position: relative;">
+        <div class="img-coll position-absolute  left-0  d-flex flex-column align-items-start"
+            style="top:3rem; gap:3rem;">
+            <img style="height: 8rem;" src="~/images/food1.png" />
+            <img style="height: 9rem;margin-left: -5rem;" src="~/images/food2.png" />
+            <img style="height: 9rem; margin-left: -5rem;" src="~/images/food3.png" />
+        </div>
+        <div style="width: 878px; height: 779px; background: white; border-radius: 9999px"></div>
+
+        <div class="banner-text position-absolute  text-center d-flex flex-column align-items-start"
+            style="top: 28%;left:50%">
+            <h1 style="color: #FF9411;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 65px;
+    font-style: normal;
+    font-weight: 400;
+ ">
+                10%
+            </h1>
+            <h2 style="color: #000;
+
+font-family: 'Archivo Black' ,sans-serif;
+font-size: 50px;
+font-style: normal;
+font-weight: 400;
+">Discount</h2>
+            <h3 style="color: #FF9411;
+
+font-family: 'Archivo Black',sans-serif;
+font-size: 53px;
+font-style: normal;
+font-weight: 400;
+">Today !</h3>
+        </div>
+
+
+
+    </div>
+
+</div>
+@* 
+@if(userName == "Guest"){
+<h2>Welcome, @userName!</h2>
+
+<form asp-action="Login" method="post" asp-controller="Account">
+  
+
+<button type="submit" class="btn btn-primary">Login</button>
+
+</form>
+}
+
+else{
+    <h2>Welcome, @userName!</h2>
+
+<form asp-action="Logout" method="post" asp-controller="Account">
+  
+
+<button type="submit" class="btn btn-primary">Logout</button>
+
+</form>
+ } *@

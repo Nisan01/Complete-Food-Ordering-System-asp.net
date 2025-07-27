@@ -1,0 +1,26 @@
+@model List<FoodOrderingSystem.Models.OrderSummary>
+
+<div class="order-container">
+
+<h2>Your Orders</h2>
+
+@foreach (var order in Model)
+{
+    <div class="order-summary border p-3 mb-4 rounded shadow">
+        <h4>Order ID: @order.OrderId</h4>
+        <p><strong>Date:</strong> @order.OrderDate.ToString("yyyy-MM-dd HH:mm")</p>
+        <p><strong>Status:</strong> @order.Status</p>
+        <p><strong>Address:</strong> @order.Address</p>
+        <p><strong>Total:</strong> Rs @order.TotalAmount</p>
+
+        <h5>Items:</h5>
+        <ul>
+            @foreach (var item in order.Items)
+            {
+                <li>@item.Name x @item.Quantity — Rs @item.Price</li>
+            }
+        </ul>
+    </div>
+}
+
+</div>

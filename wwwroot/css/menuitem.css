@@ -1,0 +1,42 @@
+
+
+.menuItem-Pic{
+    width: 50%;
+    height: 29rem;
+}
+
+
+.Item-Detail{
+    width: 50%;
+        height: 100%;
+    justify-content: space-between;
+    padding: 0.6rem 1.5rem ;
+}
+
+
+.menuItem-Pic img{
+   height: 15rem;
+}
+
+
+.price-btn{
+    width: fit-content;
+
+    padding: 0.7rem 2rem;
+}
+
+
+.Item-Detail h2{
+        background-color: white;
+    width: fit-content;
+    padding: .5rem .6rem;
+    border-radius: 1px;
+}
+
+
+
+.container-itemDetail {
+      height: 30rem;
+    background-color: blanchedalmond;
+   
+}

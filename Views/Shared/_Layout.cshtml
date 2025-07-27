@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - FoodOrderingSystem</title>
+    <script type="importmap"></script>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/menu.css" asp-append-version="true">
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/menuitem.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/css/cartpage.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/css/checkout.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/css/dashboard.css" asp-append-version="true" />
+
+    <link rel="stylesheet" href="~/FoodOrderingSystem.styles.css" asp-append-version="true" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Buenard:wght@400..700&family=Hammersmith+One&family=Ramabhadra&display=swap" rel="stylesheet">
+</head>
+<body>
+
+        <main role="main" class="container-fluid px-0" style="min-height: 100vh; position: relative; background: #FF8C00;">
+                <div style="width: 100%; height: 100vh; background: #FFC781; position:absolute; border-radius: 9999px; filter: blur(200px)"></div>
+ 
+              
+               <header>
+      
+
+<partial name="_Navbar" />
+
+      
+
+    </header>
+            @RenderBody()
+        </main>
+   
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
